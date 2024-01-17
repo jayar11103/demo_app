@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/ItunesFragment">
+
+    <fragment
+        android:id="@+id/ItunesFragment"
+        android:name="com.example.m88demoapp.ui.ItunesFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_itunes">
+        <action
+            android:id="@+id/itunes_movie_detail"
+            app:destination="@id/ItunesMovieDetailFragment" />
+        <action
+            android:id="@+id/itunes_favorite"
+            app:destination="@id/ItunesFavoriteFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/ItunesMovieDetailFragment"
+        android:name="com.example.m88demoapp.ui.ItunesMovieDetailFragment"
+        android:label="ItunesMovieDetailFragment"
+        tools:layout="@layout/fragment_itunes_movie_detail">
+        <argument
+            android:name="movie"
+            app:argType="com.example.m88demoapp.model.MovieDetails" />
+        <action
+            android:id="@+id/itunes_movie_list"
+            app:destination="@id/ItunesFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/ItunesFavoriteFragment"
+        android:name="com.example.m88demoapp.ui.ItunesFavoriteFragment"
+        android:label="Saved"
+        tools:layout="@layout/fragment_itunes_favorite">
+        <action
+            android:id="@+id/itunes_movie_list"
+            app:destination="@id/ItunesFragment" />
+    </fragment>
+
+</navigation>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="movie"
+            type="com.example.m88demoapp.iTuneEntity.MovieDetailsEntity" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/crd_icon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:backgroundTint="#F5F4FF"
+        app:cardCornerRadius="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeColor="@color/black"
+        app:strokeWidth="1dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/it_artwork"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/it_save"
+                android:layout_width="25dp"
+                android:layout_height="30dp"
+                android:textOff=""
+                android:textOn=""
+                android:background="@drawable/fav_yellow"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/it_track_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:maxWidth="200dp"
+                android:text="@{movie.trackName}"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/it_artwork"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="A Star Is Born (2018)" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/it_genre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@{movie.primaryGenreName}"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@+id/it_artwork"
+                app:layout_constraintTop_toBottomOf="@id/it_track_name"
+                tools:text="Romance" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/it_release_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@+id/it_genre"
+                app:layout_constraintTop_toTopOf="@id/it_genre"
+                tools:text="2018" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/it_rate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@{movie.contentAdvisoryRating}"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@+id/it_release_date"
+                app:layout_constraintTop_toTopOf="@id/it_release_date"
+                tools:text="M" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/it_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="4dp"
+                android:ellipsize="end"
+                android:maxWidth="250dp"
+                android:maxLines="3"
+                android:text="@{movie.longDescription}"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/it_see_more"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/it_artwork"
+                app:layout_constraintTop_toBottomOf="@id/it_genre"
+                tools:text="Seasoned musician Jackson Maine (Bradley Cooper) discovers—and falls in love with—struggling artist Ally (Lady Gaga). She has just about given up on her dream to make it big as a singer… until Jack coaxes her into the spotlight. But even as Ally’s career takes off, the personal side of their relationship is breaking down, as Jack fights an ongoing battle with his own internal demons." />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/it_see_more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/see_more"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/it_description" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

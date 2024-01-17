@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">m88 demo app</string>
+    <string name="search_movie_title">Search Movie Title</string>
+    <string name="itunes_movie_list">iTunes Movie List</string>
+    <string name="itunes_movie_details">iTunes Movie Details</string>
+    <string name="itunes_movie_favorite">iTunes Movie Favorites</string>
+    <string name="my_favorite_movie">My Favorite Movie</string>
+    <string name="see_more">See more</string>
+    <string name="see_less">See less</string>
+    <string name="no_movie_found">No Movie Found</string>
+    <string name="no_internet_connectivity">No Internet Connectivity</string>
+</resources>
